@@ -1,0 +1,109 @@
+>> rand('seed', 0) ;
+>> X = rand (100, 5) ;
+>> mHC = l1median_HoCr (X)
+
+mHC =
+
+    0.5261    0.5123    0.5171    0.4963    0.4635
+
+>> mVZ = l1median_VaZh (X)
+
+mVZ =
+
+    0.5261    0.5123    0.5171    0.4963    0.4635
+
+>> pc = PCAgrid (X)
+
+pc = 
+
+        sdev: [0.4251 0.3939]
+    loadings: [5x2 double]
+           k: 2
+         obj: [0.1807 0.1552]
+       n_obs: 100
+       scale: [1 1 1 1 1]
+      center: [0.5261 0.5123 0.5171 0.4963 0.4635]
+    pc_order: [1 2]
+      scores: [100x2 double]
+
+>> sp = PCAproj (X, 2)
+
+sp = 
+
+    loadings: [5x2 double]
+        sdev: [0.4027 0.3835]
+      center: [0.5261 0.5123 0.5171 0.4963 0.4635]
+       scale: [1 1 1 1 1]
+       n_obs: 100
+>> rand('seed', 0) ;
+>> X = rand (100, 5) ;
+>> mHC = l1median_HoCr (X)
+
+mHC =
+
+    0.5261    0.5123    0.5171    0.4963    0.4635
+
+>> mVZ = l1median_VaZh (X)
+
+mVZ =
+
+    0.5261    0.5123    0.5171    0.4963    0.4635
+
+>> pc = PCAgrid (X)
+
+pc = 
+
+        sdev: [0.4251 0.3939]
+    loadings: [5x2 double]
+           k: 2
+         obj: [0.1807 0.1552]
+       n_obs: 100
+       scale: [1 1 1 1 1]
+      center: [0.5261 0.5123 0.5171 0.4963 0.4635]
+    pc_order: [1 2]
+      scores: [100x2 double]
+
+>> sp = PCAproj (X, 2)
+
+sp = 
+
+    loadings: [5x2 double]
+        sdev: [0.4027 0.3835]
+      center: [0.5261 0.5123 0.5171 0.4963 0.4635]
+       scale: [1 1 1 1 1]
+       n_obs: 100
+      scores: [100x2 double]
+
+>> sp = PCAproj (X, 5, 'mad', 'lincomb')
+
+sp = 
+
+    loadings: [5x5 double]
+        sdev: [2.0793 0.4027 0.3835 0.3474 0.3110]
+      center: [0.5261 0.5123 0.5171 0.4963 0.4635]
+       scale: [1 1 1 1 1]
+       n_obs: 100
+      scores: [100x5 double]
+
+>> sc = qn (X)
+
+sc =
+
+    0.2958     scores: [100x2 double]
+
+>> sp = PCAproj (X, 5, 'mad', 'lincomb')
+
+sp = 
+
+    loadings: [5x5 double]
+        sdev: [2.0793 0.4027 0.3835 0.3474 0.3110]
+      center: [0.5261 0.5123 0.5171 0.4963 0.4635]
+       scale: [1 1 1 1 1]
+       n_obs: 100
+      scores: [100x5 double]
+
+>> sc = qn (X)
+
+sc =
+
+    0.2958

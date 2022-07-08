@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^doc$
+^docs$
+^NEWS.rmd
+.gitignore
+^README\.rmd$
+^\.github$
+^codecov\.yml$
+
