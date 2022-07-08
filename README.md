@@ -7,10 +7,9 @@
 
 [![CRAN
 version](https://www.r-pkg.org/badges/version/pcaPP)](https://cran.r-project.org/package=pcaPP)
-[![R-CMD-check](https://github.com/valentint/robust/workflows/R-CMD-check/badge.svg)](https://github.com/valentint/pcaPP/actions)
+[![R-CMD-check](https://github.com/valentint/pcaPP/workflows/R-CMD-check/badge.svg)](https://github.com/valentint/pcaPP/actions)
 [![downloads](https://cranlogs.r-pkg.org/badges/pcaPP)](https://cran.r-project.org/package=pcaPP)
 [![license](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![R-CMD-check](https://github.com/valentint/pcaPP/workflows/R-CMD-check/badge.svg)](https://github.com/valentint/pcaPP/actions)
 <!-- badges: end -->
 
 ## Installation
