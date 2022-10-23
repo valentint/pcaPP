@@ -1,3 +1,11 @@
+2022-10-24  Valentin Todorov  <valentin.todorov@chello.at>
+    *
+    * DESCRIPTION (Version): 2.0-3
+    *
+    * src/pcaPP_init.c, PCAgrid.cpp: Fixed warning: invalid UTF-8 in comment
+    *       see mail of K. Hornik from 17.10.2022
+    *
+
 2022-07-08  Valentin Todorov  <valentin.todorov@chello.at>
     *
     * DESCRIPTION (Version): 2.0-2
@@ -5,7 +13,7 @@
     * DESCRIPTION: added URL and BugReports entries (GitHub repository created)
     * Readme.md added
     * man/cor.fk.Rd - Fix "cor.fk.Rd:6: Escaped LaTeX specials: \^ "
-    * 
+    *
 
 2022-04-25  Valentin Todorov  <valentin.todorov@chello.at>
     *

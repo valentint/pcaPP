@@ -545,7 +545,7 @@
 		if (m_dNL && fabs (m_dNL) < 1e-6)
 			EvalDirection (1, 0) ;
 
-		const t_size dwEnd = (dCurSplit == 1.0) ? m_dwSplitCircle - 1 : m_dwSplitCircle ;	//	dCurSplit means, that we're checking an angle of 180° ( = PI). thus the first and last checked point would be the same.
+		const t_size dwEnd = (dCurSplit == 1.0) ? m_dwSplitCircle - 1 : m_dwSplitCircle ;	//	dCurSplit means, that we're checking an angle of 180 (= PI). thus the first and last checked point would be the same.
 
 		for (i = 0; i < dwEnd; i++)
 		{

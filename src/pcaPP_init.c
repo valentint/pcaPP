@@ -1,4 +1,4 @@
-//  VT::27.06.2017 - this file was added to fix the warning "Found no calls to: ‘R_registerRoutines’, ‘R_useDynamicSymbols’"
+//  VT::27.06.2017 - this file was added to fix the warning "Found no calls to: 'R_registerRoutines', 'R_useDynamicSymbols'"
 //
 //  About registration of native symbols see for example: https://www.r-bloggers.com/1-easy-package-registration/
 //      also here http://r.789695.n4.nabble.com/Registration-of-native-routines-td4728874.html
