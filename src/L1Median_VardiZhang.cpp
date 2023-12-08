@@ -1,3 +1,4 @@
+#include <R_ext/Error.h>
 #include "L1Median.h"
 
 	t_size CL1Median_VZ::CheckRowSums (const double &dThreshold)
@@ -47,9 +48,12 @@
 
 			if (m_nTrace >= 1)
 				meal_printf ("%d observations are exatly at the median.\r\n", dwZero) ;
-			if (m_nTrace >= 0 && dwZero > 1)
-				meal_warning ("The current L1median estimate is ident with more than one observation. The resulting l1median estimation might be incorrect. [CL1Median_VZ::Iter]") ;
-
+			if (m_nTrace >= 0 && dwZero > 1) {
+                // VT::07.12.2023 - fix warning format string is not a string literal (potentially insecure)
+				// meal_warnng("The current L1median estimate is ident with more than one observation. The resulting l1median estimation might be incorrect. [CL1Median_VZ::Iter]");
+                Rf_warning("The current L1median estimate is ident with more than one observation. The resulting l1median estimation might be incorrect. [CL1Median_VZ::Iter]") ;
+            }
+            
 			m_vTt.Reset (0) ;
 			EO<if_C_ApaBdD>::VtMcVcVc_NC (*m_vTt, m_mX, m_mIsZero, m_vRowSums) ;
 

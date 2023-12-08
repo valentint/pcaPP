@@ -47,19 +47,19 @@ maxhalf = 5, scale = NULL, center = l1median_NLM, zero.tol = 1e-16, control)
   in the data matrix, there are several improvements that can be used with this
   algorithm.
 \itemize{
-  \item{update}{An updating step basing on the algorithm for finding the
+  \item update - An updating step basing on the algorithm for finding the
   eigenvectors is added to the algorithm. This can be used with any 
-  \code{CalcMethod} }
-  \item{sphere}{Additional search directions are added using random directions.
+  \code{CalcMethod}
+  \item sphere - Additional search directions are added using random directions.
   The random directions are determined using random data points generated from 
   a p-dimensional multivariate standard normal distribution. These new data 
-  points are projected to the unit sphere, giving the new search directions.}
-  \item{lincomb}{Additional search directions are added using linear 
+  points are projected to the unit sphere, giving the new search directions.
+  \item lincomb - Additional search directions are added using linear 
   combinations of the observations. It is similar to the 
-  \code{"sphere"}-algorithm, but the new data points are generated using linear 
+  \code{"sphere"} - algorithm, but the new data points are generated using linear 
   combinations of the original data \code{b_1*x_1 + ... + b_n*x_n} where the 
   coefficients \code{b_i} come from a uniform distribution in the interval 
-  \code{[0, 1]}. }
+  \code{[0, 1]}.
 }
   Similar to the function \code{\link{princomp}}, there is a \code{print} method 
   for the these objects that prints the results in a nice format and the \code{plot} 

@@ -4,6 +4,9 @@
     *
     * DESCRIPTION: Dependence on R (>= 3.6.2) added - see Writing R Extensions, 
     *   6.6.1 Fortran character strings, about USE_FC_LEN_T
+    * src/R_meal.cpp - Fixed: warning: format string is not a string literal (potentially insecure)
+    *   see mail of Kurt Hornik from 28.11.2023
+    * man/*.Rd - fixed a number of issues with /itemize and /enumerate
     *
 
 2022-10-24  Valentin Todorov  <valentin.todorov@chello.at>
