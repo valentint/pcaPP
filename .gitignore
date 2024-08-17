@@ -11,6 +11,11 @@
 # Example code in package build process
 *-Ex.R
 
+# Object files and dlls
+*.o
+*.dll
+*.rds
+
 # Output files from R CMD build
 /*.tar.gz
 

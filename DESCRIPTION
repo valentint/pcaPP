@@ -1,9 +1,13 @@
 Package: pcaPP
-Version: 2.0-4
+Version: 2.0-4-1
 VersionNote: Released 2.0-3 on 2022-10-24 on CRAN
 Title: Robust PCA by Projection Pursuit
-Author: Peter Filzmoser, Heinrich Fritz, Klaudius Kalcher
 Maintainer: Valentin Todorov <valentin.todorov@chello.at>
+Authors@R: c(person(given = "Peter", family = "Filzmoser", role = "aut"),
+              person(given = "Heinrich", family = "Fritz", role = "aut"),
+              person(given = "Klaudius", family = "Kalcher", role = "aut"),
+              person(given = "Valentin", family = "Todorov", role = "cre",
+                     email = "valentin.todorov@chello.at"))
 Depends: R(>= 3.6.2)
 Imports: mvtnorm, methods
 Suggests: robustbase
@@ -15,6 +19,10 @@ License: GPL (>= 3)
 URL: https://github.com/valentint/pcaPP
 BugReports: https://github.com/valentint/pcaPP/issues
 NeedsCompilation: yes
+Packaged: 2024-08-09 08:06:31 UTC; ripley
+Author: Peter Filzmoser [aut],
+  Heinrich Fritz [aut],
+  Klaudius Kalcher [aut],
+  Valentin Todorov [cre]
 Repository: CRAN
-Packaged: 2018-05-21 17:13:14 UTC; todorovv
-Date/Publication: 2018-01-14 18:27:29 UTC
+Date/Publication: 2024-08-09 09:49:35 UTC
