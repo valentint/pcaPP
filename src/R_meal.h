@@ -23,7 +23,9 @@
 // VT:10.10.2016
 // Problem compiling on Solaris (mail from Prof. Ripley from 18.09.2016)
 //	- add  'using namespace std;'
-using namespace std;
+
+//  VT:18.08.2024 - removed and replaced by std::calloc() - the only call to an std:: function
+//using namespace std;
 
 #ifdef R_PACKAGE_FILE
 #ifndef R_MEAL_H

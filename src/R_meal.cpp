@@ -19,6 +19,9 @@
 //	R.meal.cpp
 //	R Mathematical Environment Abstraction Layer
 
+// VT::18.08.2024 - replace Free() by R_Free(). Actually this is never used.
+#define STRICT_R_HEADERS 1
+
 #define USE_FC_LEN_T
 
 #ifdef R_PACKAGE_FILE
@@ -154,12 +157,13 @@
     
 	void *meal_alloc (size_t n, int s)
 	{
-		return calloc (n, s) ;
+		return std::calloc (n, s) ;
 	}
 
 	void meal_free (void *p)
 	{
-		Free (p) ;
+        // VT::18.08.2024 - replace Free() by R_Free(). Actually this is never used.
+		R_Free (p) ;
 	}
 
 //////////////////

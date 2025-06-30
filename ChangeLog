@@ -1,3 +1,12 @@
+2024-08-19  Valentin Todorov  <valentin.todorov@chello.at>
+    *
+    * DESCRIPTION (Version): 2.0-5
+    *
+    * src/R_meal.h - Fixed: warning: using namespace std
+    * man/R.meal.cpp - Added #define STRICT_R_HEADERS 1 to fix a problem 
+    *   with the deprecated macro Free()
+    *
+    
 2024-08-09  Prof. Ripley  
     *
     * DESCRIPTION (Version): 2.0-4-1
