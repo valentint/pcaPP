@@ -4,8 +4,9 @@ on:
   push:
     branches: [main, master]
   pull_request:
+    branches: [main, master]
 
-name: R-CMD-check.yaml
+name: R-CMD-check
 
 permissions: read-all
 
@@ -47,8 +48,6 @@ jobs:
 
       - uses: r-lib/actions/check-r-package@v2
         with:
-         upload-snapshots: true
+          upload-snapshots: true
           args: 'c("--no-build-vignettes", "--no-manual", "--as-cran")'
-          build_args: 'c("--no-build-vignettes", "--no-manual")'
-          error-on: '"error"'
-          check-dir: '"check"'
+          build_args: 'c("--no-build-vignettes")'
