@@ -1,23 +1,30 @@
-covPC <- function (x, k = ncol (x$loadings), method)
-{
+covPC <- function (x, k=ncol(x$loadings), method) {
 	if (!any(class(x) == "princomp"))
 		stop ("Invalid parameter \x22k\x22: Data type princomp expected!")
 	if (length (x$sdev) != length (x$center))
 		warning ("Calculating a rank", length (x$sdev), "- covariance matrix")
 
 	ret = list()
-	k = min (ncol (x$loadings), k)
+	k = min(ncol(x$loadings), k)
 
-	ret$cov = x$loadings[,1:k] %*% diag (x$sdev[1:k]^2) %*% t(x$loadings[,1:k])
-	ret$center = x$center
-	if (missing (method))
+    ## VT::30.09.2026: covPC() errors with k = 1 for a princomp object with multiple variables
+    ## - add drop=FALSE
+    ## - call correctly diag() - in case of k=1, if no 'nrow'parameter is provided, 
+    ##      it will return an identity matrix with size equal to x$sdev[1]   
+	ret$cov = x$loadings[, 1:k, drop=FALSE] %*% 
+                diag(x$sdev[1:k]^2, nrow=length(x$sdev[1:k])) %*% 
+                t(x$loadings[, 1:k, drop=FALSE])
+                
+    ret$center = x$center
+	
+    if(missing(method))
 		ret$method = "Covariance estimation based on PCs"
 	else
 		ret$method = method
 
-	class (ret) <- "covPC"
+	class(ret) <- "covPC"
 
-	return (ret)
+	return(ret)
 } 
 
 covPCAgrid <- function (x, control)

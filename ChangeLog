@@ -1,3 +1,10 @@
+2026-09-30  Valentin Todorov  <valentin.todorov@chello.at>
+    *
+    * DESCRIPTION (Version): 2.0-6
+    *
+    * R/covPC: covPC() errors with k=1 for a princomp object with multiple variables
+    *
+    
 2024-08-19  Valentin Todorov  <valentin.todorov@chello.at>
     *
     * DESCRIPTION (Version): 2.0-5

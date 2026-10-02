@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2017-05-08 r72665) -- "Unsuffered Consequences"
-Copyright (C) 2017 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
+R Under development (unstable) (2026-09-19 r90572 ucrt) -- "Unsuffered Consequences"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -223,6 +223,88 @@ Cumulative Var   0.25   0.50
 [149,]  1.385581011  0.654834295
 [150,]  0.748068790  0.626990436
 > 
+> ##  Test "covPC() errors with k = 1 for a princomp object with multiple variables"
+> library(pcaPP)
+> 
+> X <- rbind(
++   c(3, 0),
++   c(-1, 0),
++   c(-1, 0),
++   c(-1, 0),
++   c(0, 1),
++   c(0, -1)
++ )
+> pc <- princomp(X)
+> covPC(pc, k=2)      # this works
+$cov
+     [,1]      [,2]
+[1,]    2 0.0000000
+[2,]    0 0.3333333
+
+$center
+[1] 2.775558e-17 0.000000e+00
+
+$method
+[1] "Covariance estimation based on PCs"
+
+attr(,"class")
+[1] "covPC"
+> covPC(pc, k=1)      # this should work also
+$cov
+     [,1] [,2]
+[1,]    2    0
+[2,]    0    0
+
+$center
+[1] 2.775558e-17 0.000000e+00
+
+$method
+[1] "Covariance estimation based on PCs"
+
+attr(,"class")
+[1] "covPC"
+>  
+> Y <- rbind(
++   c(3, 0, 1),
++   c(-1, 0, 1),
++   c(-1, 0, 0),
++   c(-1, 0, 1),
++   c(0, 1, 0),
++   c(0, -1, 1)
++ )
+> 
+> pc <- princomp(Y)
+> 
+> cc <- covPC(pc, k=3) 
+> cc0 <- matrix(c(2.000000e+00, -1.301043e-17,  0.1666667,
++                 -1.604619e-17,  3.333333e-01, -0.1666667,
++                 1.666667e-01, -1.666667e-01,  0.2222222), nrow=3)
+> all.equal(cc$cov, cc0, tolerance=1e-6)
+[1] TRUE
+> 
+> cc <- covPC(pc, k=2) 
+> cc0 <- matrix(c(1.999525491,  0.003756655,  0.1720978,
++                 0.003756655,  0.303592164, -0.2096643,
++                 0.172097769, -0.209664319,  0.1600593), nrow=3)
+> all.equal(cc$cov, cc0, tolerance=1e-6)
+[1] TRUE
+> 
+> covPC(pc, k=1) 
+$cov
+            [,1]          [,2]         [,3]
+[1,]  1.99788331 -0.0185652865  0.187394222
+[2,] -0.01856529  0.0001725175 -0.001741357
+[3,]  0.18739422 -0.0017413567  0.017576900
+
+$center
+[1] 2.775558e-17 0.000000e+00 6.666667e-01
+
+$method
+[1] "Covariance estimation based on PCs"
+
+attr(,"class")
+[1] "covPC"
+> 
 > proc.time()
    user  system elapsed 
-   0.51    0.07    0.56 
+   0.46    0.17    0.62 

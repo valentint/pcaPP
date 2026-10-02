@@ -37,7 +37,8 @@ opt.BIC <- function (x, k.max = ncol (x), n.lambda = 30, lambda.max, ...)
 #	x
 # }
 
-.sPCAgrid.opt.tot <- function (x, n.lambda = 101, k.max = 2, lambda, lambda.ini, lambda.max, trace = 0, store.PCs = TRUE, f.apply = lapply, f.eval = .TPO, ...)
+.sPCAgrid.opt.tot <- function(x, n.lambda = 101, k.max = 2, lambda, lambda.ini, lambda.max, trace = 0, 
+    store.PCs = TRUE, f.apply = lapply, f.eval = .TPO, ...)
 {
 	pc.ini	<- NULL
 	f.pca <- .sPCAgrid.ini
@@ -148,7 +149,8 @@ opt.BIC <- function (x, k.max = ncol (x), n.lambda = 30, lambda.max, ...)
 		obj.pc.1 <- f.eval (x = x, pc = PCs[[length (PCs)]], k = K, obj.pc.0 = obj.pc.0, ...)
 		#.sumVar (x = x, pc = PCs[[length (PCs)]], k = K, ...)
 
-		obj <- f.apply (X = PCs, FUN = .flexapply, f = f.eval, NAME = "pc", args = list (x = x, k = K, obj.pc.0 = obj.pc.0, obj.pc.1 = obj.pc.1, ...))
+		obj <- f.apply (X = PCs, FUN = .flexapply, f = f.eval, NAME = "pc", 
+                args = list (x = x, k = K, obj.pc.0 = obj.pc.0, obj.pc.1 = obj.pc.1, ...))
 		ret$obj <- cbind (ret$obj, obj)
 
 		idx.best <- which.min (obj)
