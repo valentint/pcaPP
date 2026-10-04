@@ -9,7 +9,7 @@ covPC <- function (x, k=ncol(x$loadings), method) {
 
     ## VT::30.09.2026: covPC() errors with k = 1 for a princomp object with multiple variables
     ## - add drop=FALSE
-    ## - call correctly diag() - in case of k=1, if no 'nrow'parameter is provided, 
+    ## - call correctly diag() - in case of k=1, if no 'nrow' parameter is provided, 
     ##      it will return an identity matrix with size equal to x$sdev[1]   
 	ret$cov = x$loadings[, 1:k, drop=FALSE] %*% 
                 diag(x$sdev[1:k]^2, nrow=length(x$sdev[1:k])) %*% 

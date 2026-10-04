@@ -24,7 +24,6 @@ pc$loadings
 pc$scores
 
 ##  Test "covPC() errors with k = 1 for a princomp object with multiple variables"
-library(pcaPP)
 
 X <- rbind(
   c(3, 0),
@@ -62,3 +61,43 @@ cc0 <- matrix(c(1.999525491,  0.003756655,  0.1720978,
 all.equal(cc$cov, cc0, tolerance=1e-6)
 
 covPC(pc, k=1) 
+
+##  Test "opt.BIC errors with k.max = 2 on a 6 * 2 matrix"
+axis_data <- rbind(
+  c(3, 0),
+  c(-1, 0),
+  c(-1, 0),
+  c(-1, 0),
+  c(0, 1),
+  c(0, -1)
+)
+
+## This works
+opt.BIC(axis_data, k.max=1, n.lambda=5, method="sd", maxiter=5, center=colMeans, scale=NULL)
+
+
+## And this does not work
+opt.BIC(axis_data, k.max=2, n.lambda=5, method="sd", maxiter=5, center=colMeans, scale=NULL)
+
+## Check that we did not change anything
+axis_data_2 <- rbind(
+  c(3, 0),
+  c(-1, 0),
+  c(-1, 0),
+  c(-1, 0),
+  c(0, 1),
+  c(0, -1),
+  c(1, 1)
+)
+
+oo <- opt.BIC(axis_data_2, k.max=2, n.lambda=5, method="sd", maxiter=5, center=colMeans, scale=NULL)
+oo_opt <- matrix(c(4.891820,  8.783641, 
+            4.894596, 12.612429,
+            4.903336, 12.380532,
+            2.972103,  3.891820,
+            2.972103,  3.891820), nrow=5, byrow=TRUE)
+oo_idx.best <- matrix(c(4, 4), nrow=1)
+all.equal(oo$opt$obj, oo_opt, check.attributes=FALSE, tolerance=1e-6)
+all.equal(oo$opt$idx.best, oo_idx.best, check.attributes=FALSE) 
+
+

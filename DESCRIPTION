@@ -2,12 +2,12 @@ Package: pcaPP
 Version: 2.0-6
 VersionNote: Released 2.0-5 on 2024-08-19 on CRAN
 Title: Robust PCA by Projection Pursuit
-Maintainer: Valentin Todorov <valentin.todorov@chello.at>
+Maintainer: Valentin Todorov <valentin@todorov.at>
 Authors@R: c(person(given = "Peter", family = "Filzmoser", role = "aut"),
               person(given = "Heinrich", family = "Fritz", role = "aut"),
               person(given = "Klaudius", family = "Kalcher", role = "aut"),
               person(given = "Valentin", family = "Todorov", role = "cre",
-                     email = "valentin.todorov@chello.at"))
+                     email = "valentin@todorov.at"))
 Depends: R(>= 3.6.2)
 Imports: mvtnorm, methods
 Suggests: robustbase

@@ -151,9 +151,18 @@ opt.BIC <- function (x, k.max = ncol (x), n.lambda = 30, lambda.max, ...)
 
 		obj <- f.apply (X = PCs, FUN = .flexapply, f = f.eval, NAME = "pc", 
                 args = list (x = x, k = K, obj.pc.0 = obj.pc.0, obj.pc.1 = obj.pc.1, ...))
+
+        ## VT::03.10.2026 - opt.BIC errors with k.max = 2 on a 6 * 2 matrix
+        ##  If RSS=0, obj will be NaN for all lambda and idx.best=which.min (obj) is NULL
+        ##  - set idx.best to 1
+        
+        if(all(!is.finite(obj)))
+            obj <- rep(0, length(obj))
+
 		ret$obj <- cbind (ret$obj, obj)
 
-		idx.best <- which.min (obj)
+        idx.best <- which.min (obj)
+	
 		ret$idx.best <- cbind (ret$idx.best, idx.best)
 		ret$pc[[i]] <- PCs[[idx.best]]
 		ret$k[[i]] <- K
