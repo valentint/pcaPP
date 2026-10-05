@@ -40,8 +40,6 @@ jobs:
     - uses: r-hub/actions/setup@v1
       with:
         config: ${{ github.event.inputs.config }}
-        build_args: '["--no-build-vignettes"]'
-        args: '["--no-vignettes", "--ignore-vignettes"]'
       id: rhub-setup
 
   linux-containers:
@@ -70,6 +68,8 @@ jobs:
         with:
           token: ${{ secrets.RHUB_TOKEN }}
           job-config: ${{ matrix.config.job-config }}
+          build_args: '["--no-build-vignettes"]'
+          args: '["--no-vignettes", "--ignore-vignettes"]'
 
   other-platforms:
     needs: setup
@@ -99,3 +99,5 @@ jobs:
         with:
           job-config: ${{ matrix.config.job-config }}
           token: ${{ secrets.RHUB_TOKEN }}
+          build_args: '["--no-build-vignettes"]'
+          args: '["--no-vignettes", "--ignore-vignettes"]'
