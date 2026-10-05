@@ -1,9 +1,11 @@
-2026-10-03  Valentin Todorov  <valentin@todorov.at>
+2026-10-05  Valentin Todorov  <valentin@todorov.at>
     *
+    * DESCRIPTION (Version): 2.0-7
     * DESCRIPTION (Version): 2.0-6
     *
     * R/covPC.R: fixed issue "covPC() errors with k=1 for a princomp object with multiple variables"
     * R/opt.TPO.R: fixed issue "opt.BIC errors with k.max = 2 on a 6 * 2 matrix"
+    * DESCRIPTION: changed maintainer email to valentin@todorov.at
     *
     
 2024-08-19  Valentin Todorov  <valentin.todorov@chello.at>

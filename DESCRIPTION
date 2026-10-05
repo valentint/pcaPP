@@ -1,5 +1,5 @@
 Package: pcaPP
-Version: 2.0-6
+Version: 2.0-7
 VersionNote: Released 2.0-5 on 2024-08-19 on CRAN
 Title: Robust PCA by Projection Pursuit
 Maintainer: Valentin Todorov <valentin@todorov.at>
