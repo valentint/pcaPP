@@ -65,9 +65,6 @@ jobs:
           token: ${{ secrets.RHUB_TOKEN }}
           job-config: ${{ matrix.config.job-config }}
       - uses: r-hub/actions/run-check@v1
-       env:
-          BUILD_ARGS: --no-build-vignettes
-          CHECK_ARGS: --ignore-vignettes
         with:
           token: ${{ secrets.RHUB_TOKEN }}
           job-config: ${{ matrix.config.job-config }}
@@ -100,5 +97,3 @@ jobs:
         with:
           job-config: ${{ matrix.config.job-config }}
           token: ${{ secrets.RHUB_TOKEN }}
-          build_args: '["--no-build-vignettes"]'
-          args: '["--no-vignettes", "--ignore-vignettes"]'
