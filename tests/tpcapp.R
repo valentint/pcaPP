@@ -34,8 +34,8 @@ X <- rbind(
   c(0, -1)
 )
 pc <- princomp(X)
-covPC(pc, k=2)      # this works
-covPC(pc, k=1)      # this should work also
+cc_k2 <- covPC(pc, k=2)      # this works
+cc_k1 <- covPC(pc, k=1)      # this should work also
  
 
 ##  Test "opt.BIC errors with k.max = 2 on a 6 * 2 matrix"
@@ -49,10 +49,10 @@ axis_data <- rbind(
 )
 
 ## This works
-opt.BIC(axis_data, k.max=1, n.lambda=5, method="sd", maxiter=5, center=colMeans, scale=NULL)
+oo_k1 <- opt.BIC(axis_data, k.max=1, n.lambda=5, method="sd", maxiter=5, center=colMeans, scale=NULL)
 
 
 ## This should work also
-opt.BIC(axis_data, k.max=2, n.lambda=5, method="sd", maxiter=5, center=colMeans, scale=NULL)
+oo_k2 <- opt.BIC(axis_data, k.max=2, n.lambda=5, method="sd", maxiter=5, center=colMeans, scale=NULL)
 
 
